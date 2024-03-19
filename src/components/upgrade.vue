@@ -97,6 +97,16 @@ function buyUpg(id, single) {
   
 }
 
+function convert(num) {
+  magnitude = 0
+  tempNum = num
+  while(tempNum >= 10) {
+    tempNum /= 10
+    magnitude++
+  }
+  return tempNum + 'e' + magnitude
+}
+
 watch(() => player.totalUpgs, () => {
   if(player.UPGS[1.11].purchased) {
     player.pointMulti = Math.pow(2, player.UPGS[1.11].purchaseAmount)
@@ -123,7 +133,7 @@ watch(resetNum, () => {
 </script>
 
 <template>
-  <p>Points: {{ player.points }}</p>
+  <p>Points: {{ convert(player.points) }}</p>
   <p v-if='player.bestPoints < 2000'>Reach 2000 points to unlock the skill tree</p>
   <br><br>
   <table style="width: 10%">

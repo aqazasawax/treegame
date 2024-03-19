@@ -30,5 +30,12 @@ export const UPGRADES = {
     purchased: false,
     single: true,
   },
+  2.21: {
+    cost: 1000000,
+    baseCost: 1000000,
+    desc: '',
+    purchased: false,
+    single: true,
+  },
 }
 </script>
